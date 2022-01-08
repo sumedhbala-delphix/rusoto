@@ -103,7 +103,7 @@ impl Client {
         &self,
         request: SignedRequest,
     ) -> Result<HttpResponse, SignAndDispatchError> {
-        self.inner.sign_and_dispatch(request, Duration::from_secs(9)).await
+        self.inner.sign_and_dispatch(request, Some(Duration::from_secs(9))).await
     }
 }
 
